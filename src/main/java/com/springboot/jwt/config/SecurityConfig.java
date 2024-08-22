@@ -18,7 +18,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers(
                         "/api/products/welcome",
-                        "/userinformation"
+                        "/userinformation/userReg",
+                        "/userinformation/user-check/",
+                        "/userinformation/**"
 
                 ).permitAll()
                 .and()

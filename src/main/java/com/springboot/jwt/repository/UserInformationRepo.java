@@ -13,5 +13,5 @@ public interface UserInformationRepo extends JpaRepository<UserInformation,Long>
                     "  FROM USERINFORMATION\n" +
                     " WHERE USER_ID = :userId"
     )
-    String getUserPasswordByUserCode(@Param("userId") String userId);
+    String getUserPasswordByUserId(@Param("userId") String userId);
 }

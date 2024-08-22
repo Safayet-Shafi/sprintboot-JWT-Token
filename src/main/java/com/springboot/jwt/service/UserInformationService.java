@@ -8,4 +8,6 @@ import java.security.NoSuchAlgorithmException;
 public interface UserInformationService {
 
     ResponseDTO postUser(UserInformationDTO userInformationDTO) throws NoSuchAlgorithmException;
+
+    String getUserPasswordByUserId(String userId);
 }

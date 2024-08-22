@@ -4,10 +4,7 @@ import com.springboot.jwt.dto.ResponseDTO;
 import com.springboot.jwt.dto.UserInformationDTO;
 import com.springboot.jwt.service.UserInformationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -18,9 +15,14 @@ public class UserInformationController {
     @Autowired
     private UserInformationService userInformationService;
 
-    @PostMapping()
+    @PostMapping("/userReg")
     ResponseDTO postUser(@RequestBody UserInformationDTO userInformationDTO) throws NoSuchAlgorithmException {
         System.out.println("userInformationDTO = " + userInformationDTO);
         return userInformationService.postUser(userInformationDTO);
+    }
+
+    @GetMapping("/user-check/{userId}")
+    public String getUserPasswordByUserId(@PathVariable String userId) {
+        return userInformationService.getUserPasswordByUserId(userId);
     }
 }

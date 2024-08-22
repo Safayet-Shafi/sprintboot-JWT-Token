@@ -48,6 +48,11 @@ public class UserInformationServiceImpl implements UserInformationService {
 
     }
 
+    @Override
+    public String getUserPasswordByUserId(String userId) {
+        return userInformationRepo.getUserPasswordByUserId(userId);
+    }
+
 
     String customHash(String val1, String val2) throws NoSuchAlgorithmException {
         String salt1 = "3T9T4QN423QC";
