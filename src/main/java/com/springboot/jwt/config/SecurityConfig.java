@@ -20,7 +20,8 @@ public class SecurityConfig {
                         "/api/products/welcome",
                         "/userinformation/userReg",
                         "/userinformation/user-check/",
-                        "/userinformation/**"
+                        "/userinformation/**",
+                        "/auth/token"
 
                 ).permitAll()
                 .and()
