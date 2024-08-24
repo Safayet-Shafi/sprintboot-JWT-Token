@@ -33,14 +33,11 @@ public class AuthController {
     @PostMapping("/token")
     public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) throws NoSuchAlgorithmException {
         System.out.println("authRequest = " + authRequest);
-        generatedPass=userInformationService.customHash((String) authRequest.getUserId(), (String) authRequest.getPassword());
-
-        dbPass=userInformationService.getUserPasswordByUserId((String) authRequest.getUserId());
-
-
+        generatedPass=userInformationService.customHash((String) authRequest.getUsername(), (String) authRequest.getPassword());
+        dbPass=userInformationService.getUserPasswordByusername((String) authRequest.getUsername());
 
         if(generatedPass.equals(dbPass)){
-            return jwtService.generateToken(authRequest.getUserId());
+            return jwtService.generateToken(authRequest.getUsername());
         }
         else{
 

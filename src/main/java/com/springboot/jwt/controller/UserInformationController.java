@@ -21,8 +21,8 @@ public class UserInformationController {
         return userInformationService.postUser(userInformationDTO);
     }
 
-    @GetMapping("/user-check/{userId}")
-    public String getUserPasswordByUserId(@PathVariable String userId) {
-        return userInformationService.getUserPasswordByUserId(userId);
+    @GetMapping("/user-check/{username}")
+    public String getUserPasswordByusername(@PathVariable String username) {
+        return userInformationService.getUserPasswordByusername(username);
     }
 }

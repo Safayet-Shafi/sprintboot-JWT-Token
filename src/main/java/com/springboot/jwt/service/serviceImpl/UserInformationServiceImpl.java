@@ -31,7 +31,7 @@ public class UserInformationServiceImpl implements UserInformationService {
         String encryptedPass = null;
         ResponseDTO responseDTO = new ResponseDTO();
         UserInformation userInformation = maptoEntity(userInformationDTO);
-        encryptedPass = customHash((String) userInformationDTO.getUserId(), (String) userInformationDTO.getPassword());
+        encryptedPass = customHash((String) userInformationDTO.getUsername(), (String) userInformationDTO.getPassword());
         System.out.println("encryptedPass = " + encryptedPass);
         userInformation.setPassword(encryptedPass);
         System.out.println("userInformation = " + userInformation);
@@ -49,8 +49,8 @@ public class UserInformationServiceImpl implements UserInformationService {
     }
 
     @Override
-    public String getUserPasswordByUserId(String userId) {
-        return userInformationRepo.getUserPasswordByUserId(userId);
+    public String getUserPasswordByusername(String username) {
+        return userInformationRepo.getUserPasswordByusername(username);
     }
 
 

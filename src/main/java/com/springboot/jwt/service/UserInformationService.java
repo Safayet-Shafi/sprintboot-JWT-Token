@@ -9,5 +9,5 @@ public interface UserInformationService {
 
     ResponseDTO postUser(UserInformationDTO userInformationDTO) throws NoSuchAlgorithmException;
 
-    String getUserPasswordByUserId(String userId);
+    String getUserPasswordByusername(String username);
 }

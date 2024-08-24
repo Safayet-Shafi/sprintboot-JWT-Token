@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Table(
-        name = "userinformation",uniqueConstraints = {@UniqueConstraint(columnNames={"userId"})}
+        name = "userinformation",uniqueConstraints = {@UniqueConstraint(columnNames={"username"})}
 )
 public class UserInformation {
 
@@ -21,11 +21,8 @@ public class UserInformation {
     )
     private Long id;
 
-    @Column(name="userId")
-    private String userId;
-
-    @Column(name="name")
-    private String name;
+    @Column(name="username")
+    private String username;
 
     @Column(name="email")
     private String email;
