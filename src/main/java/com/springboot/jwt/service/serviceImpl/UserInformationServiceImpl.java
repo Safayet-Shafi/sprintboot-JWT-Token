@@ -54,7 +54,7 @@ public class UserInformationServiceImpl implements UserInformationService {
     }
 
 
-    String customHash(String val1, String val2) throws NoSuchAlgorithmException {
+    public String customHash(String val1, String val2) throws NoSuchAlgorithmException {
         String salt1 = "3T9T4QN423QC";
         String salt2 = "TMF0T9B3PN";
         String salt3 = "X6IW04WI";
